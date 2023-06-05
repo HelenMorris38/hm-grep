@@ -1,4 +1,4 @@
 def load_txt_file(filename):
     with open(filename,'r') as f:
-        contents = f.read()
-        return contents
+        lines = [line.rstrip('\n') for line in f]
+        return lines
