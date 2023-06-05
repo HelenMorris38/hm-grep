@@ -7,3 +7,6 @@ def test_grep_returns_lines_with_found_string():
     output = "Judas Priest\nBon Jovi\nJunkyard"
     assert grep("J", "rockbands.txt") == output
     assert grep("Ju", "rockbands.txt") == "Judas Priest\nJunkyard"
+def test_returns_result_when_searching_for_symbols():
+    assert grep("!", "symbols.txt") == "!"
+    assert grep("&", "symbols.txt") == "&"
