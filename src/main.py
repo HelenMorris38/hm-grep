@@ -1,7 +1,7 @@
 import re
 from src.helpers import load_txt_file
 
-def grep(strng, filename):
+def grep(strng, filename, command=""):
     contents = load_txt_file(filename)
     result = ""
     for line in contents:
