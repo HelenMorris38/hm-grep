@@ -10,3 +10,6 @@ def test_grep_returns_lines_with_found_string():
 def test_returns_result_when_searching_for_symbols():
     assert grep("!", "symbols.txt") == "!"
     assert grep("&", "symbols.txt") == "&"
+def test_recurses_directory_tree():
+    output = "rockbands.txt:Nirvana\ntest-subdir/BFS1985.txt:Since Bruce Springsteen, Madonna, way before Nirvana\ntest-subdir/BFS1985.txt:On the radio was Springsteen, Madonna, way before Nirvana\ntest-subdir/BFS1985.txt:And bring back Springsteen, Madonna, way before Nirvana\ntest-subdir/BFS1985.txt:Bruce Springsteen, Madonna, way before Nirvana"
+    assert grep("Nirvana", "*", "-r") == output
