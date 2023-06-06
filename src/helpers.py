@@ -12,7 +12,16 @@ def get_file_names():
             for file in files:
                 if file.endswith(".txt"):
                     filenames.append(path.join(root, file))
-    return filenames
+    formatted_filenames = [filename[2:] for filename in filenames]
+
+    return formatted_filenames
+
+def search_file_contents(strng, contents):
+    result = ""
+    for line in contents:
+        if strng in line:
+            result += line + '\n'
+    return result.rstrip('\n')
 
 
 get_file_names()
