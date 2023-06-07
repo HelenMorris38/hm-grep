@@ -5,7 +5,7 @@ def test_load_txt_file_returns_contents_of_file():
     assert load_txt_file('test-rockbands.txt') == output
 def test_get_file_names_returns_list_of_txt_file_paths():
     assert get_file_names() == ['symbols.txt', 'test-rockbands.txt', 'rockbands.txt', 'test.txt', 'test-subdir/BFS1985.txt']
-def test_search_multiple_files():
+def test_search_file_contents():
     contents = load_txt_file('rockbands.txt')
     assert search_file_contents('Nirvana', contents) == 'Nirvana'
     next_contents = load_txt_file('./test-subdir/BFS1985.txt')
