@@ -1,4 +1,4 @@
-from os import listdir, path, walk
+from os import path, walk
 
 def load_txt_file(filename):
     with open(filename,'r') as f:
