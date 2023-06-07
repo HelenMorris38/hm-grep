@@ -29,4 +29,3 @@ def search_multiple_files(strng, filename, contents):
         if strng in line:
             result += filename + ':' + line + '\n'
     return result
-    # return [f'{filename}:{line}\n' for line in contents if strng in line]
