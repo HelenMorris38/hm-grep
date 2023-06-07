@@ -1,4 +1,4 @@
-from src.helpers import load_txt_file, get_file_names, search_file_contents
+from src.helpers import load_txt_file, get_file_names, search_file_contents, search_multiple_files
 
 def test_load_txt_file_returns_contents_of_file():
     output = ['Judas Priest', 'AC/DC', 'Black Sabbath', 'Aerosmith', 'Iron Maiden']
@@ -10,3 +10,6 @@ def test_search_file_contents():
     assert search_file_contents('Nirvana', contents) == 'Nirvana'
     next_contents = load_txt_file('./test-subdir/BFS1985.txt')
     assert search_file_contents('Nirvana', next_contents) == 'Since Bruce Springsteen, Madonna, way before Nirvana\nOn the radio was Springsteen, Madonna, way before Nirvana\nAnd bring back Springsteen, Madonna, way before Nirvana\nBruce Springsteen, Madonna, way before Nirvana'
+def test_search_multiple_files():
+    contents = load_txt_file('./test-subdir/BFS1985.txt')
+    assert search_multiple_files('Nirvana', 'test-subdir/BFS1985.txt', contents) == 'test-subdir/BFS1985.txt:Since Bruce Springsteen, Madonna, way before Nirvana\ntest-subdir/BFS1985.txt:On the radio was Springsteen, Madonna, way before Nirvana\ntest-subdir/BFS1985.txt:And bring back Springsteen, Madonna, way before Nirvana\ntest-subdir/BFS1985.txt:Bruce Springsteen, Madonna, way before Nirvana\n'

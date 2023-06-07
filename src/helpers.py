@@ -22,3 +22,11 @@ def search_file_contents(strng, contents):
         if strng in line:
             result += line + '\n'
     return result.rstrip('\n')
+
+def search_multiple_files(strng, filename, contents):
+    result = ""
+    for line in contents:
+        if strng in line:
+            result += filename + ':' + line + '\n'
+    return result
+    # return [f'{filename}:{line}\n' for line in contents if strng in line]
