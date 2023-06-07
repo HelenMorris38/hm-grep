@@ -2,6 +2,4 @@
 
 Following the instructions on [Coding Challenges](https://codingchallenges.fyi/) and writing my own grep tool.
 
-This grep tool works for an empty string, a string of alpha characters and symbols (completing step 2 of the challenge).
-
-I am currently working on adding functionality so that it will recurse a directory tree. 
+This grep tool works for an empty string, a string of alpha characters and symbols, and has functionality for the -r command so it will recurse a directory tree (completing step 3 of the challenge).
