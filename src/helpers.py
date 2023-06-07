@@ -22,6 +22,3 @@ def search_file_contents(strng, contents):
         if strng in line:
             result += line + '\n'
     return result.rstrip('\n')
-
-
-get_file_names()
