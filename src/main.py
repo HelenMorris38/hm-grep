@@ -10,11 +10,6 @@ def grep(strng, filename, command=""):
             search_result = search_multiple_files(strng, filename, contents)
             if search_result:
                 search_results += search_result
-            # for line in contents:
-            #     if strng in line:
-            #         search_results.append([filename + ':', line + '\n'])
-        print(search_results)
-        # results = [''.join(search_result) for search_result in search_results]
         return search_results.rstrip('\n')
     else:
         contents = load_txt_file(filename)
