@@ -16,16 +16,24 @@ def get_file_names():
 
     return formatted_filenames
 
-def search_file_contents(strng, contents):
+def search_file_contents(strng, contents, invert_match=""):
     result = ""
     for line in contents:
-        if strng in line:
-            result += line + '\n'
+            if strng in line:
+                if invert_match:
+                    if invert_match not in line:
+                        result += line + '\n'
+                else:
+                    result += line + '\n'
     return result.rstrip('\n')
 
-def search_multiple_files(strng, filename, contents):
+def search_multiple_files(strng, filename, contents, invert_match=""):
     result = ""
     for line in contents:
         if strng in line:
-            result += filename + ':' + line + '\n'
+            if invert_match:
+                if invert_match not in line:
+                    result += filename + ':' + line + '\n'
+            else:
+                result += filename + ':' + line + '\n'
     return result

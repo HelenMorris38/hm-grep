@@ -10,6 +10,9 @@ def test_search_file_contents():
     assert search_file_contents('Nirvana', contents) == 'Nirvana'
     next_contents = load_txt_file('./test-subdir/BFS1985.txt')
     assert search_file_contents('Nirvana', next_contents) == 'Since Bruce Springsteen, Madonna, way before Nirvana\nOn the radio was Springsteen, Madonna, way before Nirvana\nAnd bring back Springsteen, Madonna, way before Nirvana\nBruce Springsteen, Madonna, way before Nirvana'
+def test_search_file_contents_inverts_matches():
+    contents = load_txt_file('rockbands.txt')
+    assert search_file_contents('J', contents, 'P') == 'Bon Jovi\nJunkyard'
 def test_search_multiple_files():
     contents = load_txt_file('./test-subdir/BFS1985.txt')
-    assert search_multiple_files('Nirvana', 'test-subdir/BFS1985.txt', contents) == 'test-subdir/BFS1985.txt:Since Bruce Springsteen, Madonna, way before Nirvana\ntest-subdir/BFS1985.txt:On the radio was Springsteen, Madonna, way before Nirvana\ntest-subdir/BFS1985.txt:And bring back Springsteen, Madonna, way before Nirvana\ntest-subdir/BFS1985.txt:Bruce Springsteen, Madonna, way before Nirvana\n'
+    assert search_multiple_files('Nirvana', 'test-subdir/BFS1985.txt', contents, 'Madonna') == ''
