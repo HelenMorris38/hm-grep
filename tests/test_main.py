@@ -13,3 +13,5 @@ def test_returns_result_when_searching_for_symbols():
 def test_recurses_directory_tree():
     output = "rockbands.txt:Nirvana\ntest-subdir/BFS1985.txt:Since Bruce Springsteen, Madonna, way before Nirvana\ntest-subdir/BFS1985.txt:On the radio was Springsteen, Madonna, way before Nirvana\ntest-subdir/BFS1985.txt:And bring back Springsteen, Madonna, way before Nirvana\ntest-subdir/BFS1985.txt:Bruce Springsteen, Madonna, way before Nirvana"
     assert grep("Nirvana", "*", "-r") == output
+def test_inverts_the_search():
+    assert grep("Nirvana", "*", "-r", "Madonna") == "rockbands.txt:Nirvana"
